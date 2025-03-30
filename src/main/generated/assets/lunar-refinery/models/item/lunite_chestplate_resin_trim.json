@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lunar-refinery:item/lunite_chestplate",
+    "layer1": "minecraft:trims/items/lunite_chestplate_trim_resin"
+  }
+}

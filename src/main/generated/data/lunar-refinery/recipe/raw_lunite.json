@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "lunar-refinery:block_of_raw_lunite"
+  ],
+  "result": {
+    "count": 9,
+    "id": "lunar-refinery:raw_lunite"
+  }
+}

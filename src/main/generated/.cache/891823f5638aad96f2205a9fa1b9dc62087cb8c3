@@ -1,0 +1,5 @@
+// 1.21.4	-999999999-01-01T00:00:00	Lunar Refinery/Block Loot Tables
+1b033ae3ae7d0136838b4156ad3b9c1e199b8304 data/lunar-refinery/loot_table/blocks/block_of_lunite.json
+24218424db6fd5e54252e3c178eaa1b5027238f7 data/lunar-refinery/loot_table/blocks/block_of_raw_lunite.json
+ff3ef9197b0f3584111d27d5922c8c39a6e9d4d5 data/lunar-refinery/loot_table/blocks/deepslate_lunite_ore.json
+ff3ef9197b0f3584111d27d5922c8c39a6e9d4d5 data/lunar-refinery/loot_table/blocks/lunite_ore.json

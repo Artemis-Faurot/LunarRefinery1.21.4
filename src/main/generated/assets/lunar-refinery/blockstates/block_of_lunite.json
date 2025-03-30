@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "lunar-refinery:block/block_of_lunite"
+    }
+  }
+}

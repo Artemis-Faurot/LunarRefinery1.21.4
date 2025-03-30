@@ -1,0 +1,18 @@
+{
+  "block.lunar-refinery.block_of_lunite": "Block of Lunite",
+  "block.lunar-refinery.block_of_raw_lunite": "Block of Raw Lunite",
+  "block.lunar-refinery.deepslate_lunite_ore": "Deepslate Lunite Ore",
+  "block.lunar-refinery.lunite_ore": "Lunite Ore",
+  "item.lunar-refinery.block_of_lunite": "Block of Lunite",
+  "item.lunar-refinery.block_of_raw_lunite": "Block of Raw Lunite",
+  "item.lunar-refinery.deepslate_lunite_ore": "Deepslate Lunite Ore",
+  "item.lunar-refinery.lunite_boots": "Lunite Boots",
+  "item.lunar-refinery.lunite_chestplate": "Lunite Chestplate",
+  "item.lunar-refinery.lunite_dust": "Lunite Dust",
+  "item.lunar-refinery.lunite_helmet": "Lunite Helmet",
+  "item.lunar-refinery.lunite_ingot": "Lunite Ingot",
+  "item.lunar-refinery.lunite_leggings": "Lunite Leggings",
+  "item.lunar-refinery.lunite_ore": "Lunite Ore",
+  "item.lunar-refinery.raw_lunite": "Raw Lunite",
+  "itemgroup.lunar-refinery": "Lunar Refinery"
+}

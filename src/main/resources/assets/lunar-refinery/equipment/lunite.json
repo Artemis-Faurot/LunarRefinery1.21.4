@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "lunar-refinery:lunite"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "lunar-refinery:lunite"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "smelting",
+  "ingredient": "lunar-refinery:raw_lunite",
+  "result": {
+    "id": "lunar-refinery:lunite_ingot"
+  }
+}

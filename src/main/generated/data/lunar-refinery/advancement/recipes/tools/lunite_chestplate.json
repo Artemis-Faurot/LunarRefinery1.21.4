@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lunite_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "lunar-refinery:lunite_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "lunar-refinery:lunite_chestplate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lunite_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "lunar-refinery:lunite_chestplate"
+    ]
+  }
+}
