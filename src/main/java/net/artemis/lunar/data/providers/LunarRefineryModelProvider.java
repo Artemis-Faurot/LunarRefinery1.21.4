@@ -1,16 +1,13 @@
 package net.artemis.lunar.data.providers;
 
-import net.artemis.lunar.LunarRefinery;
 import net.artemis.lunar.blocks.LunarRefineryBlocks;
-import net.artemis.lunar.items.LunarRefineryArmorMaterials;
-import net.artemis.lunar.items.LunarRefineryItems;
+import net.artemis.lunar.item.materials.LunarRefineryArmorMaterials;
+import net.artemis.lunar.item.LunarRefineryItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.BlockStateModelGenerator;
 import net.minecraft.client.data.ItemModelGenerator;
 import net.minecraft.client.data.Models;
-import net.minecraft.item.equipment.EquipmentAssetKeys;
-import net.minecraft.util.Identifier;
 
 public class LunarRefineryModelProvider extends FabricModelProvider {
     public LunarRefineryModelProvider(FabricDataOutput output) {

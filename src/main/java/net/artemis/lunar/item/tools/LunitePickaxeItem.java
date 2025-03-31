@@ -1,5 +1,6 @@
-package net.artemis.lunar.items;
+package net.artemis.lunar.item.tools;
 
+import net.artemis.lunar.item.materials.LunarRefineryToolMaterials;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -28,7 +29,7 @@ public class LunitePickaxeItem extends PickaxeItem {
                         long time = world.getTimeOfDay() % 24000;
 
                         if (time >= 13000 && time <= 23000) {
-                            ((PlayerEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 20, 1, true, false));
+                            ((PlayerEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 220, 1, true, false));
                         }
                     }
                 }

@@ -1,6 +1,11 @@
-package net.artemis.lunar.items;
+package net.artemis.lunar.item;
 
 import net.artemis.lunar.LunarRefinery;
+import net.artemis.lunar.item.armor.LuniteBootsItem;
+import net.artemis.lunar.item.armor.LuniteHelmetItem;
+import net.artemis.lunar.item.materials.LunarRefineryArmorMaterials;
+import net.artemis.lunar.item.materials.LunarRefineryToolMaterials;
+import net.artemis.lunar.item.tools.LunitePickaxeItem;
 import net.minecraft.item.*;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
@@ -8,6 +13,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.artemis.lunar.item.items.*;
 
 import java.util.function.Function;
 
@@ -20,11 +26,11 @@ public class LunarRefineryItems {
     }
 
     // Items
-    public static final Item RAW_LUNITE = register("raw_lunite", Item::new, new Item.Settings().maxCount(64));
-    public static final Item LUNITE_INGOT = register("lunite_ingot", Item::new, new Item.Settings().maxCount(64));
-    public static final Item LUNITE_DUST = register("lunite_dust", Item::new, new Item.Settings().maxCount(64));
-    public static final Item PULSE_POWDER = register("pulse_powder", Item::new, new Item.Settings().maxCount(64));
-    public static final Item PULSE_CORE = register("pulse_core", Item::new, new Item.Settings().maxCount(64));
+    public static final Item RAW_LUNITE = register(RawLunite.name, RawLunite::new, RawLunite.settings);
+    public static final Item LUNITE_INGOT = register(LuniteIngot.name, LuniteIngot::new, LuniteIngot.settings);
+    public static final Item LUNITE_DUST = register(LuniteDust.name, LuniteDust::new, LuniteDust.settings);
+    public static final Item PULSE_POWDER = register(PulsePowder.name, PulsePowder::new, PulsePowder.settings);
+    public static final Item PULSE_CORE = register(PulseCore.name, PulseCore::new, PulseCore.settings);
 
     // Armor
     public static final Item LUNITE_HELMET = register("lunite_helmet", LuniteHelmetItem::new, new Item.Settings().maxCount(1).maxDamage(EquipmentType.HELMET.getMaxDamage(LunarRefineryArmorMaterials.LUNITE_BASE_DURABILITY)));

@@ -1,6 +1,7 @@
-package net.artemis.lunar.items;
+package net.artemis.lunar.item.materials;
 
 import net.artemis.lunar.blocks.LunarRefineryBlockTags;
+import net.artemis.lunar.item.LunarRefineryItemTags;
 import net.minecraft.item.ToolMaterial;
 
 public class LunarRefineryToolMaterials {

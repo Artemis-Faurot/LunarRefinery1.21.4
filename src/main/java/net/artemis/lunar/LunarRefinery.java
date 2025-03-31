@@ -1,17 +1,19 @@
 package net.artemis.lunar;
 
 import net.artemis.lunar.blocks.LunarRefineryBlocks;
-import net.artemis.lunar.items.LunarRefineryItems;
+import net.artemis.lunar.item.LunarRefineryItems;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
-import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemGroup;
@@ -20,9 +22,9 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.GenerationStep;
@@ -75,6 +77,36 @@ public class LunarRefinery implements ModInitializer {
 			itemGroup.add(LunarRefineryItems.PULSE_POWDER);
 
 			itemGroup.add(LunarRefineryItems.PULSE_CORE);
+		});
+
+		ServerEntityEvents.EQUIPMENT_CHANGE.register((LivingEntity entity, EquipmentSlot slot, ItemStack previousStack, ItemStack currentStack) -> {
+			if (entity instanceof ServerPlayerEntity player && slot == EquipmentSlot.HEAD) {
+				if (previousStack.getItem() == LunarRefineryItems.LUNITE_HELMET && currentStack.getItem() != LunarRefineryItems.LUNITE_HELMET) {
+					if (player.hasStatusEffect(StatusEffects.NIGHT_VISION)) {
+						player.removeStatusEffect(StatusEffects.NIGHT_VISION);
+					}
+				}
+			}
+		});
+
+		ServerEntityEvents.EQUIPMENT_CHANGE.register((LivingEntity entity, EquipmentSlot slot, ItemStack previousStack, ItemStack currentStack) -> {
+			if (entity instanceof ServerPlayerEntity player && slot == EquipmentSlot.FEET) {
+				if (previousStack.getItem() == LunarRefineryItems.LUNITE_BOOTS && currentStack.getItem() != LunarRefineryItems.LUNITE_BOOTS) {
+					if (player.hasStatusEffect(StatusEffects.SPEED)) {
+						player.removeStatusEffect(StatusEffects.SPEED);
+					}
+				}
+			}
+		});
+
+		ServerEntityEvents.EQUIPMENT_CHANGE.register((LivingEntity entity, EquipmentSlot slot, ItemStack previousStack, ItemStack currentStack) -> {
+			if (entity instanceof ServerPlayerEntity player && slot == EquipmentSlot.MAINHAND) {
+				if (previousStack.getItem() == LunarRefineryItems.LUNITE_PICKAXE && currentStack.getItem() != LunarRefineryItems.LUNITE_PICKAXE) {
+					if (player.hasStatusEffect(StatusEffects.HASTE)) {
+						player.removeStatusEffect(StatusEffects.HASTE);
+					}
+				}
+			}
 		});
 
 		ServerLivingEntityEvents.AFTER_DEATH.register((LivingEntity entity, DamageSource source) -> {
