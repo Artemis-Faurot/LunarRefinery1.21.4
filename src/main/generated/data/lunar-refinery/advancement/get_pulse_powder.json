@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "got_pulse_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "lunar-refinery:pulse_powder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": "You're ready to begin your adventure with Lunar Refinery!",
+    "icon": {
+      "count": 1,
+      "id": "lunar-refinery:pulse_powder"
+    },
+    "title": "Lunar Engineer"
+  },
+  "requirements": [
+    [
+      "got_pulse_powder"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

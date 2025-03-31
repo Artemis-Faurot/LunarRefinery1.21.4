@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "L": "lunar-refinery:lunite_ingot",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "LL",
+    "LS",
+    " S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "lunar-refinery:lunite_axe"
+  }
+}
