@@ -16,8 +16,8 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class LuniteBootsItem extends ArmorItem {
-    public LuniteBootsItem(ArmorMaterial material, Settings settings) {
-        super(material, EquipmentType.BOOTS, settings);
+    public LuniteBootsItem(Settings settings) {
+        super(LunarRefineryArmorMaterials.LUNITE, EquipmentType.BOOTS, settings);
     }
 
     @Override
@@ -40,6 +40,6 @@ public class LuniteBootsItem extends ArmorItem {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.literal("Grants a speed at night").formatted(Formatting.AQUA));
+        tooltip.add(Text.literal("Grants Speed at night").formatted(Formatting.AQUA));
     }
 }

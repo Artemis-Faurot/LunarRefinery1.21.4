@@ -22,18 +22,18 @@ public class LunarRefineryAdvancementProvider extends FabricAdvancementProvider 
 
     @Override
     public void generateAdvancement(RegistryWrapper.WrapperLookup wrapperLookup, Consumer<AdvancementEntry> consumer) {
-//        AdvancementEntry getBlueMoonCrystal = Advancement.Builder.create()
-//                .display(
-//                        LunarRefineryItems.MOON_CRYSTAL,
-//                        Text.literal("Lunar Engineer"),
-//                        Text.literal("You're ready to start your adventure with Lunar Refinery!"),
-//                        Identifier.ofVanilla("textures/gui/advancements/backgrounds/adventure.png"),
-//                        AdvancementFrame.TASK,
-//                        true,
-//                        true,
-//                        false
-//                )
-//                .criterion("got_blue_moon_crystal", InventoryChangedCriterion.Conditions.items(LunarRefineryItems.MOON_CRYSTAL))
-//                .build(consumer, LunarRefinery.MOD_ID + ":get_blue_moon_crystal");
+        AdvancementEntry getPulsePowder = Advancement.Builder.create()
+                .display(
+                        LunarRefineryItems.PULSE_POWDER,
+                        Text.literal("Lunar Engineer"),
+                        Text.literal("You're ready to begin your adventure with Lunar Refinery!"),
+                        Identifier.ofVanilla("textures/gui/advancements/backgrounds/adventure.png"),
+                        AdvancementFrame.TASK,
+                        true,
+                        true,
+                        false
+                )
+                .criterion("got_pulse_powder", InventoryChangedCriterion.Conditions.items(LunarRefineryItems.PULSE_POWDER))
+                .build(consumer, LunarRefinery.MOD_ID + ":get_pulse_powder");
     }
 }

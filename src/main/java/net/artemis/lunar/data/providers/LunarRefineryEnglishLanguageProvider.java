@@ -26,6 +26,12 @@ public class LunarRefineryEnglishLanguageProvider extends FabricLanguageProvider
         translationBuilder.add(LunarRefineryItems.LUNITE_CHESTPLATE, "Lunite Chestplate");
         translationBuilder.add(LunarRefineryItems.LUNITE_LEGGINGS, "Lunite Leggings");
         translationBuilder.add(LunarRefineryItems.LUNITE_BOOTS, "Lunite Boots");
+        translationBuilder.add(LunarRefineryItems.LUNITE_SWORD, "Lunite Sword");
+        translationBuilder.add(LunarRefineryItems.LUNITE_SHOVEL, "Lunite Shovel");
+        translationBuilder.add(LunarRefineryItems.LUNITE_PICKAXE, "Lunite Pickaxe");
+        translationBuilder.add(LunarRefineryItems.LUNITE_AXE, "Lunite Axe");
+        translationBuilder.add(LunarRefineryItems.LUNITE_HOE, "Lunite Hoe");
+        translationBuilder.add(LunarRefineryItems.PULSE_POWDER, "Pulse Powder");
 
         translationBuilder.add(LunarRefineryBlocks.LUNITE_ORE, "Lunite Ore");
         translationBuilder.add(LunarRefineryBlocks.DEEPSLATE_LUNITE_ORE, "Deepslate Lunite Ore");

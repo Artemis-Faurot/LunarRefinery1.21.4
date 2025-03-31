@@ -27,13 +27,20 @@ public class LunarRefineryModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(LunarRefineryItems.LUNITE_DUST, Models.GENERATED);
         itemModelGenerator.register(LunarRefineryItems.LUNITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(LunarRefineryItems.RAW_LUNITE, Models.GENERATED);
+        itemModelGenerator.register(LunarRefineryItems.LUNITE_DUST, Models.GENERATED);
+        itemModelGenerator.register(LunarRefineryItems.PULSE_POWDER, Models.GENERATED);
 
         itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_HELMET, LunarRefineryArmorMaterials.LUNITE_ARMOR_MATERIAL_KEY, "lunite_helmet", false);
         itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_CHESTPLATE, LunarRefineryArmorMaterials.LUNITE_ARMOR_MATERIAL_KEY, "lunite_chestplate", false);
         itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_LEGGINGS, LunarRefineryArmorMaterials.LUNITE_ARMOR_MATERIAL_KEY, "lunite_leggings", false);
         itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_BOOTS, LunarRefineryArmorMaterials.LUNITE_ARMOR_MATERIAL_KEY, "lunite_boots", false);
+
+        itemModelGenerator.register(LunarRefineryItems.LUNITE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(LunarRefineryItems.LUNITE_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(LunarRefineryItems.LUNITE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(LunarRefineryItems.LUNITE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(LunarRefineryItems.LUNITE_HOE, Models.HANDHELD);
     }
 }

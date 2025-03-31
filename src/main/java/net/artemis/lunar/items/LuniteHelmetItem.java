@@ -16,8 +16,8 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class LuniteHelmetItem extends ArmorItem {
-    public LuniteHelmetItem(ArmorMaterial material, Settings settings) {
-        super(material, EquipmentType.HELMET, settings);
+    public LuniteHelmetItem(Settings settings) {
+        super(LunarRefineryArmorMaterials.LUNITE, EquipmentType.HELMET, settings);
     }
 
     @Override

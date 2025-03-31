@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
@@ -91,6 +92,51 @@ public class LunarRefineryRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(LunarRefineryItems.LUNITE_INGOT), conditionsFromItem(LunarRefineryItems.LUNITE_INGOT))
                         .offerTo(exporter);
 
+                createShaped(RecipeCategory.TOOLS, LunarRefineryItems.LUNITE_SWORD, 1)
+                        .pattern("L")
+                        .pattern("L")
+                        .pattern("S")
+                        .input('L', LunarRefineryItems.LUNITE_INGOT)
+                        .input('S', Items.STICK)
+                        .criterion(hasItem(LunarRefineryItems.LUNITE_INGOT), conditionsFromItem(Items.STICK))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, LunarRefineryItems.LUNITE_SHOVEL, 1)
+                        .pattern("L")
+                        .pattern("S")
+                        .pattern("S")
+                        .input('L', LunarRefineryItems.LUNITE_INGOT)
+                        .input('S', Items.STICK)
+                        .criterion(hasItem(LunarRefineryItems.LUNITE_INGOT), conditionsFromItem(Items.STICK))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, LunarRefineryItems.LUNITE_PICKAXE, 1)
+                        .pattern("LLL")
+                        .pattern(" S ")
+                        .pattern(" S ")
+                        .input('L', LunarRefineryItems.LUNITE_INGOT)
+                        .input('S', Items.STICK)
+                        .criterion(hasItem(LunarRefineryItems.LUNITE_INGOT), conditionsFromItem(Items.STICK))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, LunarRefineryItems.LUNITE_AXE, 1)
+                        .pattern("LL")
+                        .pattern("LS")
+                        .pattern(" S")
+                        .input('L', LunarRefineryItems.LUNITE_INGOT)
+                        .input('S', Items.STICK)
+                        .criterion(hasItem(LunarRefineryItems.LUNITE_INGOT), conditionsFromItem(Items.STICK))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, LunarRefineryItems.LUNITE_HOE, 1)
+                        .pattern("LL")
+                        .pattern(" S")
+                        .pattern(" S")
+                        .input('L', LunarRefineryItems.LUNITE_INGOT)
+                        .input('S', Items.STICK)
+                        .criterion(hasItem(LunarRefineryItems.LUNITE_INGOT), conditionsFromItem(Items.STICK))
+                        .offerTo(exporter);
+
                 createShapeless(RecipeCategory.TOOLS, LunarRefineryItems.LUNITE_INGOT, 9)
                         .input(LunarRefineryBlocks.BLOCK_OF_LUNITE, 1)
                         .criterion(hasItem(LunarRefineryBlocks.BLOCK_OF_LUNITE), conditionsFromItem(LunarRefineryBlocks.BLOCK_OF_LUNITE))
@@ -99,6 +145,12 @@ public class LunarRefineryRecipeProvider extends FabricRecipeProvider {
                 createShapeless(RecipeCategory.TOOLS, LunarRefineryItems.RAW_LUNITE, 9)
                         .input(LunarRefineryBlocks.BLOCK_OF_RAW_LUNITE, 1)
                         .criterion(hasItem(LunarRefineryBlocks.BLOCK_OF_RAW_LUNITE), conditionsFromItem(LunarRefineryBlocks.BLOCK_OF_RAW_LUNITE))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC, LunarRefineryItems.PULSE_POWDER, 2)
+                        .input(LunarRefineryItems.LUNITE_DUST)
+                        .input(Items.REDSTONE)
+                        .criterion(hasItem(LunarRefineryItems.LUNITE_DUST), conditionsFromItem(Items.REDSTONE))
                         .offerTo(exporter);
             }
 
