@@ -31,6 +31,7 @@ public class LunarRefineryModelProvider extends FabricModelProvider {
         itemModelGenerator.register(LunarRefineryItems.RAW_LUNITE, Models.GENERATED);
         itemModelGenerator.register(LunarRefineryItems.LUNITE_DUST, Models.GENERATED);
         itemModelGenerator.register(LunarRefineryItems.PULSE_POWDER, Models.GENERATED);
+        itemModelGenerator.register(LunarRefineryItems.PULSE_CORE, Models.GENERATED);
 
         itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_HELMET, LunarRefineryArmorMaterials.LUNITE_ARMOR_MATERIAL_KEY, "lunite_helmet", false);
         itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_CHESTPLATE, LunarRefineryArmorMaterials.LUNITE_ARMOR_MATERIAL_KEY, "lunite_chestplate", false);

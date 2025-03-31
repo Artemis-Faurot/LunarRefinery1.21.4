@@ -137,6 +137,18 @@ public class LunarRefineryRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(LunarRefineryItems.LUNITE_INGOT), conditionsFromItem(Items.STICK))
                         .offerTo(exporter);
 
+                createShaped(RecipeCategory.MISC, LunarRefineryItems.PULSE_CORE, 1)
+                        .pattern("LGL")
+                        .pattern("GPG")
+                        .pattern("LGL")
+                        .input('L', LunarRefineryItems.LUNITE_INGOT)
+                        .input('G', Items.GLASS)
+                        .input('P', LunarRefineryItems.PULSE_POWDER)
+                        .criterion(hasItem(LunarRefineryItems.LUNITE_INGOT), conditionsFromItem(LunarRefineryItems.LUNITE_INGOT))
+                        .criterion(hasItem(LunarRefineryItems.PULSE_CORE), conditionsFromItem(LunarRefineryItems.PULSE_CORE))
+                        .criterion(hasItem(Items.GLASS), conditionsFromItem(Items.GLASS))
+                        .offerTo(exporter);
+
                 createShapeless(RecipeCategory.TOOLS, LunarRefineryItems.LUNITE_INGOT, 9)
                         .input(LunarRefineryBlocks.BLOCK_OF_LUNITE, 1)
                         .criterion(hasItem(LunarRefineryBlocks.BLOCK_OF_LUNITE), conditionsFromItem(LunarRefineryBlocks.BLOCK_OF_LUNITE))

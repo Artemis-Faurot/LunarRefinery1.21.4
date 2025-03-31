@@ -24,6 +24,7 @@ public class LunarRefineryItems {
     public static final Item LUNITE_INGOT = register("lunite_ingot", Item::new, new Item.Settings().maxCount(64));
     public static final Item LUNITE_DUST = register("lunite_dust", Item::new, new Item.Settings().maxCount(64));
     public static final Item PULSE_POWDER = register("pulse_powder", Item::new, new Item.Settings().maxCount(64));
+    public static final Item PULSE_CORE = register("pulse_core", Item::new, new Item.Settings().maxCount(64));
 
     // Armor
     public static final Item LUNITE_HELMET = register("lunite_helmet", LuniteHelmetItem::new, new Item.Settings().maxCount(1).maxDamage(EquipmentType.HELMET.getMaxDamage(LunarRefineryArmorMaterials.LUNITE_BASE_DURABILITY)));

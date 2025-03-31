@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "minecraft:glass",
+    "L": "lunar-refinery:lunite_ingot",
+    "P": "lunar-refinery:pulse_powder"
+  },
+  "pattern": [
+    "LGL",
+    "GPG",
+    "LGL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "lunar-refinery:pulse_core"
+  }
+}

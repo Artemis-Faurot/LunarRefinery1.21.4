@@ -18,6 +18,7 @@ a850b45988c39feb5bb10f0c96abdca5e89b4637 assets/lunar-refinery/items/lunite_ingo
 1ef1e4350d983aa6c049a19ded6dfed5932a0d00 assets/lunar-refinery/items/lunite_pickaxe.json
 31ea569e3ead17f3b499fa850a97fd5f1c5ebba1 assets/lunar-refinery/items/lunite_shovel.json
 50b138fcb9060756ed18a272b5d71d2959fe7db1 assets/lunar-refinery/items/lunite_sword.json
+5503d2ed13dc5fd0dbd66cb6a726778da9d87079 assets/lunar-refinery/items/pulse_core.json
 96b894ef53acab9d474139c47d8731014693417f assets/lunar-refinery/items/pulse_powder.json
 6e20e2e87af533c6d8beec37cf15c71acff5a87a assets/lunar-refinery/items/raw_lunite.json
 acede6008f4981ed653f77b3dea28ce871f876ed assets/lunar-refinery/models/block/block_of_lunite.json
@@ -79,5 +80,6 @@ e55500ec2f8c21e5109b14b565816beb18a1192e assets/lunar-refinery/models/item/lunit
 7b2da9fc5443d0e305d933c2b9f5d0bbd0a6aecf assets/lunar-refinery/models/item/lunite_pickaxe.json
 b67329ddc4a52be7507265d27773f94835430fb9 assets/lunar-refinery/models/item/lunite_shovel.json
 3907878c35ddbc2a4c3bba20135be5f0c4b5506e assets/lunar-refinery/models/item/lunite_sword.json
+a750b337175a7a701ab28df3303b2a34f8287c1a assets/lunar-refinery/models/item/pulse_core.json
 3466835d67a194be49c30374625895bc8fec421d assets/lunar-refinery/models/item/pulse_powder.json
 eb6c615a23834f2d085af9d5cc51da7ae20b6481 assets/lunar-refinery/models/item/raw_lunite.json

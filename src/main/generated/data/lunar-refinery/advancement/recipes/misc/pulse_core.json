@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lunite_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "lunar-refinery:lunite_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pulse_core": {
+      "conditions": {
+        "items": [
+          {
+            "items": "lunar-refinery:pulse_core"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "lunar-refinery:pulse_core"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lunite_ingot",
+      "has_pulse_core",
+      "has_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "lunar-refinery:pulse_core"
+    ]
+  }
+}

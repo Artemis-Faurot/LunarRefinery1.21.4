@@ -1,4 +1,5 @@
 // 1.21.4	-999999999-01-01T00:00:00	Lunar Refinery/LunarRefineryRecipeProvider
+04ca99279a5bb19eea98d57ff3831e76f2342f7f data/lunar-refinery/advancement/recipes/misc/pulse_core.json
 21145fb5c0398ea4ff0889dc775a22b21b7977fc data/lunar-refinery/advancement/recipes/misc/pulse_powder.json
 4b374abd8419c859feb01273c6c67cc596ca1cd1 data/lunar-refinery/advancement/recipes/tools/block_of_lunite.json
 f7e87541399a763fdaf87dd2c0872b888bf1c7ca data/lunar-refinery/advancement/recipes/tools/block_of_raw_lunite.json
@@ -29,5 +30,6 @@ a0a171630f6da15e6ef3858a33be449a2408b827 data/lunar-refinery/recipe/lunite_hoe.j
 9159a8189c6640f84df92f3dac409a03db6b563c data/lunar-refinery/recipe/lunite_pickaxe.json
 6e37688e8023fe8c164e91b1f9bac7ef3d0e7a6d data/lunar-refinery/recipe/lunite_shovel.json
 71e5d34b66467f700dcaddc092473946105d7de8 data/lunar-refinery/recipe/lunite_sword.json
+8fbd7ce9ac13943d820a15cd220da9a66d471443 data/lunar-refinery/recipe/pulse_core.json
 f6a91ea59e21ed279350d3991ffcd2bed63a0fc8 data/lunar-refinery/recipe/pulse_powder.json
 5617ec90cb30c512a5bc596ab86bf0c51d53fc19 data/lunar-refinery/recipe/raw_lunite.json

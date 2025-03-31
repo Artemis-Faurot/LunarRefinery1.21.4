@@ -73,6 +73,8 @@ public class LunarRefinery implements ModInitializer {
 
 			itemGroup.add(LunarRefineryItems.LUNITE_DUST);
 			itemGroup.add(LunarRefineryItems.PULSE_POWDER);
+
+			itemGroup.add(LunarRefineryItems.PULSE_CORE);
 		});
 
 		ServerLivingEntityEvents.AFTER_DEATH.register((LivingEntity entity, DamageSource source) -> {
