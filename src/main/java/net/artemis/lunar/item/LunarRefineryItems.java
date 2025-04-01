@@ -1,13 +1,12 @@
 package net.artemis.lunar.item;
 
 import net.artemis.lunar.LunarRefinery;
-import net.artemis.lunar.item.armor.LuniteBootsItem;
-import net.artemis.lunar.item.armor.LuniteHelmetItem;
-import net.artemis.lunar.item.materials.LunarRefineryArmorMaterials;
-import net.artemis.lunar.item.materials.LunarRefineryToolMaterials;
-import net.artemis.lunar.item.tools.LunitePickaxeItem;
+import net.artemis.lunar.item.armor.LuniteBoots;
+import net.artemis.lunar.item.armor.LuniteChestplate;
+import net.artemis.lunar.item.armor.LuniteHelmet;
+import net.artemis.lunar.item.armor.LuniteLeggings;
+import net.artemis.lunar.item.tools.*;
 import net.minecraft.item.*;
-import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -15,9 +14,11 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.artemis.lunar.item.items.*;
 
+import java.util.List;
 import java.util.function.Function;
 
 public class LunarRefineryItems {
+    public static void initialize() {}
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(LunarRefinery.MOD_ID, name));
         Item item = itemFactory.apply(settings.registryKey(itemKey));
@@ -33,17 +34,24 @@ public class LunarRefineryItems {
     public static final Item PULSE_CORE = register(PulseCore.name, PulseCore::new, PulseCore.settings);
 
     // Armor
-    public static final Item LUNITE_HELMET = register("lunite_helmet", LuniteHelmetItem::new, new Item.Settings().maxCount(1).maxDamage(EquipmentType.HELMET.getMaxDamage(LunarRefineryArmorMaterials.LUNITE_BASE_DURABILITY)));
-    public static final Item LUNITE_CHESTPLATE = register("lunite_chestplate", settings -> new ArmorItem(LunarRefineryArmorMaterials.LUNITE, EquipmentType.CHESTPLATE, settings), new Item.Settings().maxCount(1).maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(LunarRefineryArmorMaterials.LUNITE_BASE_DURABILITY)));
-    public static final Item LUNITE_LEGGINGS = register("lunite_leggings", settings -> new ArmorItem(LunarRefineryArmorMaterials.LUNITE, EquipmentType.LEGGINGS, settings), new Item.Settings().maxCount(1).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(LunarRefineryArmorMaterials.LUNITE_BASE_DURABILITY)));
-    public static final Item LUNITE_BOOTS = register("lunite_boots", LuniteBootsItem::new, new Item.Settings().maxCount(1).maxDamage(EquipmentType.BOOTS.getMaxDamage(LunarRefineryArmorMaterials.LUNITE_BASE_DURABILITY)));
+    public static final Item LUNITE_HELMET = register(LuniteHelmet.name, LuniteHelmet::new, LuniteHelmet.settings);
+    public static final Item LUNITE_CHESTPLATE = register(LuniteChestplate.name, LuniteChestplate::new, LuniteChestplate.settings);
+    public static final Item LUNITE_LEGGINGS = register(LuniteLeggings.name, LuniteLeggings::new, LuniteLeggings.settings);
+    public static final Item LUNITE_BOOTS = register(LuniteBoots.name, LuniteBoots::new, LuniteBoots.settings);
 
     // Tools
-    public static final Item LUNITE_SWORD = register("lunite_sword", settings -> new SwordItem(LunarRefineryToolMaterials.LUNITE_TOOL_MATERIAL, 3.0F, -2.4F, settings), new Item.Settings().maxCount(1));
-    public static final Item LUNITE_SHOVEL = register("lunite_shovel", settings -> new ShovelItem(LunarRefineryToolMaterials.LUNITE_TOOL_MATERIAL, 1.5F, -3.0F, settings), new Item.Settings().maxCount(1));
-    public static final Item LUNITE_PICKAXE = register("lunite_pickaxe", LunitePickaxeItem::new, new Item.Settings().maxCount(1));
-    public static final Item LUNITE_AXE = register("lunite_axe", settings -> new AxeItem(LunarRefineryToolMaterials.LUNITE_TOOL_MATERIAL, 5.5F, -3.05F, settings), new Item.Settings().maxCount(1));
-    public static final Item LUNITE_HOE = register("lunite_hoe", settings -> new HoeItem(LunarRefineryToolMaterials.LUNITE_TOOL_MATERIAL, -2.5F, -0.5F, settings), new Item.Settings().maxCount(1));
+    public static final Item LUNITE_SWORD = register(LuniteSword.name, LuniteSword::new, LuniteSword.settings);
+    public static final Item LUNITE_SHOVEL = register(LuniteShovel.name, LuniteShovel::new, LuniteShovel.settings);
+    public static final Item LUNITE_PICKAXE = register(LunitePickaxe.name, LunitePickaxe::new, LunitePickaxe.settings);
+    public static final Item LUNITE_AXE = register(LuniteAxe.name, LuniteAxe::new, LuniteAxe.settings);
+    public static final Item LUNITE_HOE = register(LuniteHoe.name, LuniteHoe::new, LuniteHoe.settings);
 
-    public static void initialize() {}
+    // Lists
+    public static List<Item> LuniteTools = List.of(
+            LUNITE_SWORD,
+            LUNITE_SHOVEL,
+            LUNITE_PICKAXE,
+            LUNITE_AXE,
+            LUNITE_HOE
+    );
 }

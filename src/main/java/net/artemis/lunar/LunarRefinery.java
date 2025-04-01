@@ -1,6 +1,6 @@
 package net.artemis.lunar;
 
-import net.artemis.lunar.blocks.LunarRefineryBlocks;
+import net.artemis.lunar.block.LunarRefineryBlocks;
 import net.artemis.lunar.item.LunarRefineryItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -34,6 +34,8 @@ import org.slf4j.LoggerFactory;
 
 public class LunarRefinery implements ModInitializer {
 	public static final String MOD_ID = "lunar-refinery";
+
+	@SuppressWarnings("unused")
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	protected static final RegistryKey<PlacedFeature> LUNITE_ORE_GENERATION = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "lunite_ore_generation"));
@@ -80,47 +82,38 @@ public class LunarRefinery implements ModInitializer {
 		});
 
 		ServerEntityEvents.EQUIPMENT_CHANGE.register((LivingEntity entity, EquipmentSlot slot, ItemStack previousStack, ItemStack currentStack) -> {
-			if (entity instanceof ServerPlayerEntity player && slot == EquipmentSlot.HEAD) {
-				if (previousStack.getItem() == LunarRefineryItems.LUNITE_HELMET && currentStack.getItem() != LunarRefineryItems.LUNITE_HELMET) {
-					if (player.hasStatusEffect(StatusEffects.NIGHT_VISION)) {
-						player.removeStatusEffect(StatusEffects.NIGHT_VISION);
-					}
-				}
-			}
+			if (!(entity instanceof ServerPlayerEntity player && slot == EquipmentSlot.HEAD)) { return; }
+			if (!(previousStack.getItem() == LunarRefineryItems.LUNITE_HELMET && currentStack.getItem() != LunarRefineryItems.LUNITE_HELMET)) { return; }
+			if (!(player.hasStatusEffect(StatusEffects.NIGHT_VISION))) { return; }
+
+			player.removeStatusEffect(StatusEffects.NIGHT_VISION);
 		});
 
 		ServerEntityEvents.EQUIPMENT_CHANGE.register((LivingEntity entity, EquipmentSlot slot, ItemStack previousStack, ItemStack currentStack) -> {
-			if (entity instanceof ServerPlayerEntity player && slot == EquipmentSlot.FEET) {
-				if (previousStack.getItem() == LunarRefineryItems.LUNITE_BOOTS && currentStack.getItem() != LunarRefineryItems.LUNITE_BOOTS) {
-					if (player.hasStatusEffect(StatusEffects.SPEED)) {
-						player.removeStatusEffect(StatusEffects.SPEED);
-					}
-				}
-			}
+			if (!(entity instanceof ServerPlayerEntity player && slot == EquipmentSlot.FEET)) { return; }
+			if (!(previousStack.getItem() == LunarRefineryItems.LUNITE_BOOTS && currentStack.getItem() != LunarRefineryItems.LUNITE_BOOTS)) { return; }
+			if (!(player.hasStatusEffect(StatusEffects.SPEED))) { return; }
+
+			player.removeStatusEffect(StatusEffects.SPEED);
 		});
 
 		ServerEntityEvents.EQUIPMENT_CHANGE.register((LivingEntity entity, EquipmentSlot slot, ItemStack previousStack, ItemStack currentStack) -> {
-			if (entity instanceof ServerPlayerEntity player && slot == EquipmentSlot.MAINHAND) {
-				if (previousStack.getItem() == LunarRefineryItems.LUNITE_PICKAXE && currentStack.getItem() != LunarRefineryItems.LUNITE_PICKAXE) {
-					if (player.hasStatusEffect(StatusEffects.HASTE)) {
-						player.removeStatusEffect(StatusEffects.HASTE);
-					}
-				}
-			}
+			if (!(entity instanceof ServerPlayerEntity player && slot == EquipmentSlot.MAINHAND)) { return; }
+			if (!(LunarRefineryItems.LuniteTools.contains(previousStack.getItem()) && !LunarRefineryItems.LuniteTools.contains(currentStack.getItem()))) { return; }
+			if (!(player.hasStatusEffect(StatusEffects.HASTE))) { return; }
+
+			player.removeStatusEffect(StatusEffects.HASTE);
 		});
 
 		ServerLivingEntityEvents.AFTER_DEATH.register((LivingEntity entity, DamageSource source) -> {
 			World world = entity.getWorld();
 
-			if (!world.isClient && entity instanceof HostileEntity) {
-				if (source.getAttacker() instanceof PlayerEntity player) {
-					if (player.getMainHandStack().getItem() == LunarRefineryItems.LUNITE_SWORD) {
-						if (world.getRandom().nextFloat() < 0.25F) {
-							entity.dropStack((ServerWorld) world, new ItemStack(LunarRefineryItems.LUNITE_DUST), 1.0F);
-						}
-					}
-				}
-			}
+			if (!(!world.isClient && entity instanceof HostileEntity)) { return; }
+			if (!(source.getAttacker() instanceof PlayerEntity player)) { return; }
+			if (!(player.getMainHandStack().getItem() == LunarRefineryItems.LUNITE_SWORD)) { return; }
+			if (!(world.getRandom().nextFloat() < 0.5F)) { return; }
+
+			entity.dropStack((ServerWorld) world, new ItemStack(LunarRefineryItems.LUNITE_DUST), 1.0F);
 		});
 	}
 }

@@ -1,8 +1,7 @@
-package net.artemis.lunar.blocks;
+package net.artemis.lunar.block;
 
 import net.artemis.lunar.LunarRefinery;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;

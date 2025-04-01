@@ -1,8 +1,18 @@
 package net.artemis.lunar.data.providers;
 
 import net.artemis.lunar.LunarRefinery;
-import net.artemis.lunar.blocks.LunarRefineryBlocks;
+import net.artemis.lunar.block.LunarRefineryBlocks;
+import net.artemis.lunar.block.blocks.BlockOfLunite;
+import net.artemis.lunar.block.blocks.BlockOfRawLunite;
+import net.artemis.lunar.block.blocks.DeepslateLuniteOre;
+import net.artemis.lunar.block.blocks.LuniteOre;
 import net.artemis.lunar.item.LunarRefineryItems;
+import net.artemis.lunar.item.armor.LuniteBoots;
+import net.artemis.lunar.item.armor.LuniteChestplate;
+import net.artemis.lunar.item.armor.LuniteHelmet;
+import net.artemis.lunar.item.armor.LuniteLeggings;
+import net.artemis.lunar.item.items.*;
+import net.artemis.lunar.item.tools.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -19,41 +29,29 @@ public class LunarRefineryEnglishLanguageProvider extends FabricLanguageProvider
     public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
         translationBuilder.add(LunarRefinery.LUNAR_REFINERY_GROUP_KEY, "Lunar Refinery");
 
-        translationBuilder.add(LunarRefineryItems.LUNITE_DUST, "Lunite Dust");
-        translationBuilder.add(LunarRefineryItems.LUNITE_INGOT, "Lunite Ingot");
-        translationBuilder.add(LunarRefineryItems.RAW_LUNITE, "Raw Lunite");
-        translationBuilder.add(LunarRefineryItems.LUNITE_HELMET, "Lunite Helmet");
-        translationBuilder.add(LunarRefineryItems.LUNITE_CHESTPLATE, "Lunite Chestplate");
-        translationBuilder.add(LunarRefineryItems.LUNITE_LEGGINGS, "Lunite Leggings");
-        translationBuilder.add(LunarRefineryItems.LUNITE_BOOTS, "Lunite Boots");
-        translationBuilder.add(LunarRefineryItems.LUNITE_SWORD, "Lunite Sword");
-        translationBuilder.add(LunarRefineryItems.LUNITE_SHOVEL, "Lunite Shovel");
-        translationBuilder.add(LunarRefineryItems.LUNITE_PICKAXE, "Lunite Pickaxe");
-        translationBuilder.add(LunarRefineryItems.LUNITE_AXE, "Lunite Axe");
-        translationBuilder.add(LunarRefineryItems.LUNITE_HOE, "Lunite Hoe");
-        translationBuilder.add(LunarRefineryItems.PULSE_POWDER, "Pulse Powder");
-        translationBuilder.add(LunarRefineryItems.PULSE_CORE, "Pulse Core");
+        translationBuilder.add(LunarRefineryItems.LUNITE_DUST, LuniteDust.displayName);
+        translationBuilder.add(LunarRefineryItems.LUNITE_INGOT, LuniteIngot.displayName);
+        translationBuilder.add(LunarRefineryItems.RAW_LUNITE, RawLunite.displayName);
+        translationBuilder.add(LunarRefineryItems.LUNITE_HELMET, LuniteHelmet.displayName);
+        translationBuilder.add(LunarRefineryItems.LUNITE_CHESTPLATE, LuniteChestplate.displayName);
+        translationBuilder.add(LunarRefineryItems.LUNITE_LEGGINGS, LuniteLeggings.displayName);
+        translationBuilder.add(LunarRefineryItems.LUNITE_BOOTS, LuniteBoots.displayName);
+        translationBuilder.add(LunarRefineryItems.LUNITE_SWORD, LuniteSword.displayName);
+        translationBuilder.add(LunarRefineryItems.LUNITE_SHOVEL, LuniteShovel.displayName);
+        translationBuilder.add(LunarRefineryItems.LUNITE_PICKAXE, LunitePickaxe.displayName);
+        translationBuilder.add(LunarRefineryItems.LUNITE_AXE, LuniteAxe.displayName);
+        translationBuilder.add(LunarRefineryItems.LUNITE_HOE, LuniteHoe.displayName);
+        translationBuilder.add(LunarRefineryItems.PULSE_POWDER, PulsePowder.displayName);
+        translationBuilder.add(LunarRefineryItems.PULSE_CORE, PulseCore.displayName);
 
-        translationBuilder.add(LunarRefineryBlocks.LUNITE_ORE, "Lunite Ore");
-        translationBuilder.add(LunarRefineryBlocks.DEEPSLATE_LUNITE_ORE, "Deepslate Lunite Ore");
-        translationBuilder.add(LunarRefineryBlocks.BLOCK_OF_LUNITE, "Block of Lunite");
-        translationBuilder.add(LunarRefineryBlocks.BLOCK_OF_RAW_LUNITE, "Block of Raw Lunite");
+        translationBuilder.add(LunarRefineryBlocks.LUNITE_ORE, LuniteOre.displayName);
+        translationBuilder.add(LunarRefineryBlocks.DEEPSLATE_LUNITE_ORE, DeepslateLuniteOre.displayName);
+        translationBuilder.add(LunarRefineryBlocks.BLOCK_OF_LUNITE, BlockOfLunite.displayName);
+        translationBuilder.add(LunarRefineryBlocks.BLOCK_OF_RAW_LUNITE, BlockOfRawLunite.displayName);
 
-        translationBuilder.add(
-                Identifier.of("item." + LunarRefinery.MOD_ID, "lunite_ore"),
-                "Lunite Ore"
-        );
-        translationBuilder.add(
-                Identifier.of("item." + LunarRefinery.MOD_ID, "deepslate_lunite_ore"),
-                "Deepslate Lunite Ore"
-        );
-        translationBuilder.add(
-                Identifier.of("item." + LunarRefinery.MOD_ID, "block_of_lunite"),
-                "Block of Lunite"
-        );
-        translationBuilder.add(
-                Identifier.of("item." + LunarRefinery.MOD_ID, "block_of_raw_lunite"),
-                "Block of Raw Lunite"
-        );
+        translationBuilder.add(Identifier.of("item." + LunarRefinery.MOD_ID, LuniteOre.name), LuniteOre.displayName);
+        translationBuilder.add(Identifier.of("item." + LunarRefinery.MOD_ID, DeepslateLuniteOre.name), DeepslateLuniteOre.displayName);
+        translationBuilder.add(Identifier.of("item." + LunarRefinery.MOD_ID, BlockOfLunite.name), BlockOfLunite.displayName);
+        translationBuilder.add(Identifier.of("item." + LunarRefinery.MOD_ID, BlockOfRawLunite.name), BlockOfRawLunite.displayName);
     }
 }

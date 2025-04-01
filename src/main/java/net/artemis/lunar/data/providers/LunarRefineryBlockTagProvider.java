@@ -1,7 +1,7 @@
 package net.artemis.lunar.data.providers;
 
-import net.artemis.lunar.blocks.LunarRefineryBlockTags;
-import net.artemis.lunar.blocks.LunarRefineryBlocks;
+import net.artemis.lunar.block.LunarRefineryBlockTags;
+import net.artemis.lunar.block.LunarRefineryBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;

@@ -1,6 +1,10 @@
-package net.artemis.lunar.blocks;
+package net.artemis.lunar.block;
 
 import net.artemis.lunar.LunarRefinery;
+import net.artemis.lunar.block.blocks.BlockOfLunite;
+import net.artemis.lunar.block.blocks.BlockOfRawLunite;
+import net.artemis.lunar.block.blocks.DeepslateLuniteOre;
+import net.artemis.lunar.block.blocks.LuniteOre;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.ExperienceDroppingBlock;
@@ -13,7 +17,6 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.IntProvider;
-import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -50,45 +53,10 @@ public class LunarRefineryBlocks {
         return Registry.register(Registries.BLOCK, blockKey, block);
     }
 
-    public static Block LUNITE_ORE = register(
-            "lunite_ore",
-            Block::new,
-            AbstractBlock.Settings.create()
-                    .strength(3f, 3f)
-                    .sounds(BlockSoundGroup.STONE)
-                    .requiresTool(),
-            true
-    );
-
-    public static Block DEEPSLATE_LUNITE_ORE = register(
-            "deepslate_lunite_ore",
-            Block::new,
-            AbstractBlock.Settings.create()
-                    .strength(4.5f, 6f)
-                    .sounds(BlockSoundGroup.DEEPSLATE)
-                    .requiresTool(),
-            true
-    );
-
-    public static Block BLOCK_OF_RAW_LUNITE = register(
-            "block_of_raw_lunite",
-            Block::new,
-            AbstractBlock.Settings.create()
-                    .strength(5f, 6f)
-                    .sounds(BlockSoundGroup.STONE)
-                    .requiresTool(),
-            true
-    );
-
-    public static Block BLOCK_OF_LUNITE = register(
-            "block_of_lunite",
-            Block::new,
-            AbstractBlock.Settings.create()
-                    .strength(5f, 6f)
-                    .sounds(BlockSoundGroup.METAL)
-                    .requiresTool(),
-            true
-    );
+    public static Block LUNITE_ORE = register(LuniteOre.name, LuniteOre::new, LuniteOre.settings, true);
+    public static Block DEEPSLATE_LUNITE_ORE = register(DeepslateLuniteOre.name, DeepslateLuniteOre::new, DeepslateLuniteOre.settings, true);
+    public static Block BLOCK_OF_RAW_LUNITE = register(BlockOfRawLunite.name, BlockOfRawLunite::new, BlockOfRawLunite.settings, true);
+    public static Block BLOCK_OF_LUNITE = register(BlockOfLunite.name, BlockOfLunite::new, BlockOfLunite.settings, true);
 
     public static void initialize() {}
 }

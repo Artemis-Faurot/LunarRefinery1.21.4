@@ -1,8 +1,12 @@
 package net.artemis.lunar.data.providers;
 
-import net.artemis.lunar.blocks.LunarRefineryBlocks;
-import net.artemis.lunar.item.materials.LunarRefineryArmorMaterials;
+import net.artemis.lunar.block.LunarRefineryBlocks;
+import net.artemis.lunar.item.armor.LuniteBoots;
+import net.artemis.lunar.item.armor.LuniteChestplate;
+import net.artemis.lunar.item.armor.LuniteHelmet;
+import net.artemis.lunar.item.armor.LuniteLeggings;
 import net.artemis.lunar.item.LunarRefineryItems;
+import net.artemis.lunar.materials.armor.LuniteArmorMaterial;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.BlockStateModelGenerator;
@@ -30,10 +34,10 @@ public class LunarRefineryModelProvider extends FabricModelProvider {
         itemModelGenerator.register(LunarRefineryItems.PULSE_POWDER, Models.GENERATED);
         itemModelGenerator.register(LunarRefineryItems.PULSE_CORE, Models.GENERATED);
 
-        itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_HELMET, LunarRefineryArmorMaterials.LUNITE_ARMOR_MATERIAL_KEY, "lunite_helmet", false);
-        itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_CHESTPLATE, LunarRefineryArmorMaterials.LUNITE_ARMOR_MATERIAL_KEY, "lunite_chestplate", false);
-        itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_LEGGINGS, LunarRefineryArmorMaterials.LUNITE_ARMOR_MATERIAL_KEY, "lunite_leggings", false);
-        itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_BOOTS, LunarRefineryArmorMaterials.LUNITE_ARMOR_MATERIAL_KEY, "lunite_boots", false);
+        itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_HELMET, LuniteArmorMaterial.LUNITE_ARMOR_MATERIAL_KEY, LuniteHelmet.name, false);
+        itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_CHESTPLATE, LuniteArmorMaterial.LUNITE_ARMOR_MATERIAL_KEY, LuniteChestplate.name, false);
+        itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_LEGGINGS, LuniteArmorMaterial.LUNITE_ARMOR_MATERIAL_KEY, LuniteLeggings.name, false);
+        itemModelGenerator.registerArmor(LunarRefineryItems.LUNITE_BOOTS, LuniteArmorMaterial.LUNITE_ARMOR_MATERIAL_KEY, LuniteBoots.name, false);
 
         itemModelGenerator.register(LunarRefineryItems.LUNITE_SWORD, Models.HANDHELD);
         itemModelGenerator.register(LunarRefineryItems.LUNITE_SHOVEL, Models.HANDHELD);

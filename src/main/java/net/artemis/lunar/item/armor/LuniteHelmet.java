@@ -1,6 +1,7 @@
 package net.artemis.lunar.item.armor;
 
-import net.artemis.lunar.item.materials.LunarRefineryArmorMaterials;
+import net.artemis.lunar.materials.armor.LunarRefineryArmorMaterials;
+import net.artemis.lunar.materials.armor.LuniteArmorMaterial;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -15,18 +16,35 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class LuniteHelmetItem extends ArmorItem {
-    public LuniteHelmetItem(Settings settings) {
+public class LuniteHelmet extends ArmorItem {
+    public LuniteHelmet(Settings settings) {
         super(LunarRefineryArmorMaterials.LUNITE, EquipmentType.HELMET, settings);
     }
 
+    public static final String name = "lunite_helmet";
+    public static final String displayName = "Lunite Helmet";
+    public static final Settings settings = new Settings()
+            .maxCount(1)
+            .maxDamage(
+                    EquipmentType.HELMET.getMaxDamage(
+                            LuniteArmorMaterial.LUNITE_BASE_DURABILITY
+                    )
+            );
+
     @Override
     public void inventoryTick(ItemStack stack, World world, net.minecraft.entity.Entity entity, int slot, boolean selected) {
-        if (entity instanceof LivingEntity livingEntity && slot == EquipmentSlot.HEAD.getEntitySlotId()) {
-            if (!world.isClient) {
-                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 220, 0, true, false));
-            }
-        }
+        if (!(entity instanceof LivingEntity && slot == EquipmentSlot.HEAD.getEntitySlotId())) { return; }
+        if (world.isClient) { return; }
+
+        ((LivingEntity) entity).addStatusEffect(
+                new StatusEffectInstance(
+                        StatusEffects.NIGHT_VISION,
+                        220,
+                        0,
+                        true,
+                        false
+                )
+        );
     }
 
     @Override
